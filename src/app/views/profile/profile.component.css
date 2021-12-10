@@ -1,0 +1,36 @@
+.container{
+    border:1px solid #ccc;
+    border-radius: 3rem;
+    width:90%;
+    margin: 3rem auto;
+}
+
+.imageContainer{
+    text-align: center;
+    margin:1rem auto;
+    overflow: hidden;
+}
+
+.imageContainer img{
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+@media screen and (min-width:768px){
+    .container{
+        width:60%;
+    }
+}
+
+@media screen and (min-width:992px){
+    .container{
+        width:45%;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .container{
+        width:35%;
+    }
+}

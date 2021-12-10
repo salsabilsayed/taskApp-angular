@@ -1,0 +1,39 @@
+<section>
+  <div class="container">
+  <div class="form-container p-4">
+  <form #addTaskForm="ngForm" (ngSubmit)="addTask(addTaskForm.value)">
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input
+        type="email"
+        class="form-control"
+        id="description"
+        name="description"
+        ngModel
+        #description="ngModel"
+        required
+        [(ngModel)]="task.description"
+      />
+    </div>
+
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="completed"
+        name="completed"
+        [(ngModel)]="task.completed"
+      />
+      <label class="form-check-label" for="completed">completed</label>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="addTaskForm.invalid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+</div>
+</section>

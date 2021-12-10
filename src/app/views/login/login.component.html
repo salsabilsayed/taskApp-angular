@@ -1,0 +1,69 @@
+<section>
+  <div class="container my-5">
+    <form
+      #loginForm="ngForm"
+      (ngSubmit)="login(loginForm.value)"
+      class="w-75 mx-auto"
+    >
+      <!-- email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          name="email"
+          type="email"
+          class="form-control"
+          id="email"
+          ngModel
+          #email="ngModel"
+          required
+          email
+          (focus)="removeErrorMsg()"
+        />
+      </div>
+
+      <!-- error messages for email -->
+      <div *ngIf="email.touched && email.invalid" class="alert alert-danger mb-3">
+        <div *ngIf="email.errors?.['required']">Email is required</div>
+        <div *ngIf="email.errors?.['email']">Please enter a valid email!</div>
+      </div>
+
+      <!-- password -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          ngModel
+          #password="ngModel"
+          required
+          minlength="6"
+          (focus)="removeErrorMsg()"
+        />
+      </div>
+
+      <!-- error messages for password-->
+      <div *ngIf="password.touched && password.invalid" class="alert alert-danger mb-3">
+        <div *ngIf="password.errors?.['required']">Password is required</div>
+        <div *ngIf="password.errors?.['minlength']">
+          password min length is
+          {{password.errors?.['minlength'].requiredLength}} ...you entered only
+          {{password.errors?.['minlength'].actualLength}}
+        </div>
+      </div>
+
+      <!-- error login -->
+      <div *ngIf="invalidLogin" class="errors mb-4">
+        invalid email or password
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loginForm.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</section>
