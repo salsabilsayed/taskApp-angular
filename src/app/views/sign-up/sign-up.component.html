@@ -21,7 +21,7 @@
       </div>
 
       <!-- error messages for name-->
-      <div *ngIf="name.touched && name.invalid" class="errors mb-3">
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger mb-3">
         <div *ngIf="name.errors?.['required']">First name is required</div>
         <div *ngIf="name.errors?.['minlength']">
           First name min length is
@@ -45,11 +45,11 @@
       </div>
 
       <!-- error messages for age-->
-      <div *ngIf="age.touched && age.invalid" class="errors mb-3">
+      <div *ngIf="age.touched && age.invalid" class="alert alert-danger mb-3">
         <div *ngIf="age.errors?.['required']">Age is required</div>
       </div>
       <!-- backend error -->
-      <div class="errors" *ngIf="!age.errors?.['required'] && invalidAge">
+      <div class="alert alert-danger" *ngIf="!age.errors?.['required'] && invalidAge">
         Age should be > 0
       </div>
       <!-- email -->
@@ -69,12 +69,12 @@
       </div>
 
       <!-- error messages for email -->
-      <div *ngIf="email.touched && email.invalid" class="errors mb-3">
+      <div *ngIf="email.touched && email.invalid" class="alert alert-danger mb-3">
         <div *ngIf="email.errors?.['required']">Email is required</div>
         <div *ngIf="email.errors?.['email']">Please enter a valid email!</div>
       </div>
       <!-- backend error -->
-      <div *ngIf="invalidEmail" class="errors">Sorry, email already exist</div>
+      <div *ngIf="invalidEmail" class="alert alert-danger">Sorry, email already exist</div>
 
       <!-- password -->
       <div class="mb-3">
@@ -92,7 +92,7 @@
       </div>
 
       <!-- error messages for password-->
-      <div *ngIf="password.touched && password.invalid" class="errors mb-3">
+      <div *ngIf="password.touched && password.invalid" class="alert alert-danger mb-3">
         <div *ngIf="password.errors?.['required']">Password is required</div>
         <div *ngIf="password.errors?.['minlength']">
           password min length is
