@@ -3,6 +3,9 @@
     border-radius: 3rem;
     width:90%;
     margin: 3rem auto;
+    background-color: rgba(0, 0, 0,0.8);
+    color:#fff;
+    padding:0 1.2rem;
 }
 
 .imageContainer{

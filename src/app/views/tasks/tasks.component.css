@@ -1,23 +1,17 @@
-.container{
+.table-container{
     width:90%;
     margin: 3rem auto;
 }
 
 
 @media screen and (min-width:768px){
-    .container{
+    .table-container{
         width:75%;
     }
 }
 
 @media screen and (min-width:992px){
-    .container{
+    .table-container{
         width:65%;
     }
 }
-
-/* @media screen and (min-width:1200px){
-    .container{
-        width:35%;
-    }
-} */

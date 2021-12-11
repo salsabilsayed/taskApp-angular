@@ -1,5 +1,5 @@
 <section>
-  <div class="container py-5">
+  <div class="container p-4">
 <form #updateUserForm='ngForm' (ngSubmit)='updateUser(updateUserForm.value)'>
     <div class="mb-3">
       <label for="name" class="form-label">Edit Name</label>
@@ -39,7 +39,7 @@
 
     <button 
       type="submit" 
-      class="btn btn-primary" 
+      class="btn btn-warning w-100" 
       [disabled]='updateUserForm.invalid'>
       Update
     </button>
